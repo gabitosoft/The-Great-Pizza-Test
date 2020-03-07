@@ -1,0 +1,249 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "This is API documentation for Byme project backend services.",
+      "version": "1.0.0",
+      "title": "ByMe",
+      "termsOfService": "http://swagger.io/terms/",
+      "contact": {
+        "email": "apiteam@swagger.io"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    },
+    "host": "bymeswagger.io",
+    "basePath": "/v2",
+    "tags": [
+      {
+        "name": "Role",
+        "description": "Everything about Roles",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "http://swagger.io"
+        }
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/role": {
+        "post": {
+          "tags": [
+            "Role"
+          ],
+          "summary": "Add a new role to the store",
+          "description": "",
+          "operationId": "addPet",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Role object that needs to be added to the store",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Role"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Role"
+          ],
+          "summary": "Update an existing role",
+          "description": "",
+          "operationId": "updatePet",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Role object that needs to be added to the store",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Role"
+              }
+            }
+          ],
+          "responses": {
+            "400": {
+              "description": "Invalid ID supplied"
+            },
+            "404": {
+              "description": "Role not found"
+            },
+            "405": {
+              "description": "Validation exception"
+            }
+          }
+        }
+      },
+      "/role/{roleId}": {
+        "get": {
+          "tags": [
+            "Role"
+          ],
+          "summary": "Find role by ID",
+          "description": "Returns a single role",
+          "operationId": "getPetById",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "roleId",
+              "in": "path",
+              "description": "ID of role to return",
+              "required": true,
+              "type": "integer",
+              "format": "int64"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "$ref": "#/definitions/Role"
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied"
+            },
+            "404": {
+              "description": "Role not found"
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Role"
+          ],
+          "summary": "Updates a role in the store with form data",
+          "description": "",
+          "operationId": "updatePetWithForm",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "roleId",
+              "in": "path",
+              "description": "ID of role that needs to be updated",
+              "required": true,
+              "type": "integer",
+              "format": "int64"
+            },
+            {
+              "name": "name",
+              "in": "formData",
+              "description": "Updated name of the role",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "status",
+              "in": "formData",
+              "description": "Updated status of the role",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Role"
+          ],
+          "summary": "Deletes a role",
+          "description": "",
+          "operationId": "deletePet",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "api_key",
+              "in": "header",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "roleId",
+              "in": "path",
+              "description": "Role id to delete",
+              "required": true,
+              "type": "integer",
+              "format": "int64"
+            }
+          ],
+          "responses": {
+            "400": {
+              "description": "Invalid ID supplied"
+            },
+            "404": {
+              "description": "Role not found"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Role": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "members": {
+            "type": "string",
+            "description": "Users id"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "Order"
+        }
+      }
+    }
+  }
