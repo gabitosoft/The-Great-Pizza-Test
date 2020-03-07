@@ -5,3 +5,5 @@ An interesting web application developed in Angular and NodeJS for listing pizza
 Install Angular
 npm install -g @angular/cli
 
+Install SQLite
+https://www.sqlite.org/download.html
