@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op
-const config = require('./../config/db');
+const config = require('../config/db');
 
 module.exports = new Sequelize(
   config.db.DB_NAME,
@@ -10,6 +10,7 @@ module.exports = new Sequelize(
     host: config.db.options.HOST,
     dialect: config.db.options.dialect,
     pool: config.db.options.pool,
+    storage: config.db.DB_STORAGE,
     operatorsAliases: {
       $and: Op.and,
       $or: Op.or,
