@@ -1,0 +1,29 @@
+[{
+  "title": "Pizza",
+  "class": "local_pizza",
+  "children": [{
+      "title": "List Pizzas",
+      "path": "pizza/list",
+      "component": "PizzaListComponent"
+    }, {
+      "title": "New Pizza",
+      "path": "pizza/new",
+      "component": "PizzaNewComponent"
+    }, {
+      "title": "Pizza Toppings",
+      "path": "pizza/toppings",
+      "component": "PizzaToppingComponent"
+    }]
+}, {
+  "title": "Toppings",
+  "class": "group_work",
+  "children": [{
+      "title": "List Toppings",
+      "path": "topping/list",
+      "component": "ToppingListComponent"
+    }, {
+      "title": "New Topping",
+      "path": "topping/new",
+      "component": "ToppingNewComponent"
+  }]
+}]

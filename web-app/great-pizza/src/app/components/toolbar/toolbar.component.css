@@ -1,0 +1,12 @@
+.logo {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 36px;
+  width: 36x;
+}
+
+.toolbar-content {
+  /* background: linear-gradient(90deg, #0078bc 1%, #00beda); */
+  background: linear-gradient(135deg, #31353D 20%, #0078bc 21%, rgb(0, 120, 188, 0.9) 18%);
+  color: #fff;
+}

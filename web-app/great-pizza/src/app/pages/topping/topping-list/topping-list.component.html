@@ -1,0 +1,30 @@
+<div class="topping-list">
+  <h2>{{title}}</h2>
+  <button mat-raised-button color="primary" matTooltip="Insert new topping" [matTooltipPosition]="'above'" [routerLink]="['/topping/new']">
+    <mat-icon>add</mat-icon>Add
+  </button>
+  <ngx-datatable class="material"
+    [rows]="rows"
+    [columns]="columns"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [limit]="10"
+    [rowHeight]="'auto'"
+    [selected]="selected"
+    [selectionType]="'checkbox'"
+    (select)='onSelect($event)'>
+    <ngx-datatable-column
+      [width]="30"
+      [sortable]="false"
+      [canAutoResize]="false"
+      [draggable]="false"
+      [resizeable]="false"
+      [headerCheckboxable]="true"
+      [checkboxable]="true">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Id" prop="id_topping"></ngx-datatable-column>
+    <ngx-datatable-column name="Name" prop="name_topping"></ngx-datatable-column>
+    <ngx-datatable-column name="Price" prop="price_topping"></ngx-datatable-column>
+    <ngx-datatable-column name="Description" prop="description_topping"></ngx-datatable-column>
+  </ngx-datatable>
+</div>

@@ -1,0 +1,15 @@
+.toolbar-spacer {
+    flex: 1 1 auto;
+  }
+
+.footer-fixed {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+}
+
+.toolbar-footer {
+  /* background: linear-gradient(90deg, #0078bc 1%, #00beda); */
+  color: #464a52;
+  padding-right: 20px;
+}

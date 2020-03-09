@@ -1,0 +1,105 @@
+::ng-deep body {
+  font-family: 'Rubik';
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-card {
+  max-width: 200px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.title_step {
+  font-size: 14px;
+}
+
+.search-panel {
+  padding: 10px;
+}
+
+.main-container {
+  height: 100vh;
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.drawer-container {
+  height: 100%;
+}
+
+::ng-deep .custom-vertical-divider {
+  height: 28px;
+  background: #eaedf1;
+}
+
+.sidenav {
+  background: #31353D;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.router-outlet {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  /* background: #f4f8f9; */
+  background: #fff;
+}
+
+/*------scroll bar---------------------*/
+::ng-deep ::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+::ng-deep ::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::ng-deep ::-webkit-scrollbar-thumb {
+  background: #525965;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::ng-deep ::-webkit-scrollbar-thumb:hover {
+  background: #525965;
+}
+::ng-deep ::-webkit-scrollbar-thumb:active {
+  background: #525965;
+}
+::ng-deep ::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::ng-deep ::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+::ng-deep ::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+::ng-deep ::-webkit-scrollbar-corner {
+  background: transparent;
+}

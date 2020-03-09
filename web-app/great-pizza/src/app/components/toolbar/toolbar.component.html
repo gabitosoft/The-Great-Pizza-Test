@@ -1,0 +1,9 @@
+<mat-toolbar color="primary" class="toolbar-content">
+  <mat-toolbar-row>
+    <img class="logo" *ngIf="!isDisplayedSidebar" src="assets/img/pizza-logo.png"/>
+    <button mat-icon-button (click)="toggleSidenav()">
+      <mat-icon *ngIf="!isDisplayedSidebar">menu</mat-icon>
+      <mat-icon *ngIf="isDisplayedSidebar">navigate_before</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

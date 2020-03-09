@@ -1,0 +1,44 @@
+<mat-toolbar class="sidebar-toolbar">
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center">
+    <img class="logo" src="assets/img/pizza-logo.png"/>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="user-container" fxLayout="row" fxLayoutAlign="center center">
+  <div class="user-pic">
+    <img src="assets/img/user.jpg" alt="User Picture">
+  </div>
+  <div fxLayout="column" class="user-info">
+    <span>Jose <strong>Rodriguez</strong></span>
+    <span>Administrador</span>
+    <span class="user-status" fxLayout="row">
+      <mat-icon mat-list-icon>fiber_manual_record</mat-icon>
+      <span>Online</span>
+    </span>
+  </div>
+</div>
+
+<ul class="sidebar">
+  <li *ngFor="let item of items" fxLayout="column">
+    <a *ngIf="!item.children" fxLayout="row" routerLink="{{item.path}}">
+      <mat-icon mat-list-icon class="icons-sidebar">{{item.class}}</mat-icon>
+      <span>{{item.title}}</span>
+    </a>
+
+    <a class="dropdown-sidebar" *ngIf="item.children" fxLayout="row" (click)="collapse(item)">
+      <mat-icon mat-list-icon class="icons-sidebar">{{item.class}}</mat-icon>
+      <span>{{item.title}}</span>
+      <div class="container-next-icon">
+        <mat-icon *ngIf="item.isCollapsed" mat-list-icon>navigate_next</mat-icon>
+        <mat-icon *ngIf="!item.isCollapsed" mat-list-icon>keyboard_arrow_down</mat-icon>
+      </div>
+    </a>
+
+    <ul *ngIf="item.children && !item.isCollapsed">
+      <li *ngFor="let child of item.children" class="child-list-item" routerLink="{{child.path}}">
+        <a fxLayout="row" routerLink="{{item.path}}">
+          <span class="child-title-text">{{child.title}}</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>

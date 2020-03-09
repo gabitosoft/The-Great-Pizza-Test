@@ -1,0 +1,140 @@
+::ng-deep .expansion-header .mat-expansion-panel-header {
+  padding: 0 16px;
+}
+::ng-deep .expansion-panel .mat-expansion-panel-body {
+  padding: 0;
+}
+
+.sidemenu-mat-list-nav {
+  padding-top: 0px;
+}
+
+.logo {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  height: 40px;
+  width: 150px;
+}
+
+.expand-text-title {
+  padding-left: 23px;
+  padding-top: 3px;
+  font-size: 16px;
+}
+
+.sidebar-toolbar {
+  background: #31353D;
+}
+
+.sidebar {
+  min-width: 260px;
+  max-width: 260px;
+  background: #337ab7;
+  color: #fff;
+  list-style-type: none;
+  padding-left: 0px;
+  margin-top: 10px;
+  font-style: normal;
+  font-size: 14px;
+  background: #31353D;
+  border-top: 1px solid #3a3f48;
+}
+
+.sidebar li {
+  display: inline-block;
+  width: 100%;
+  justify-content: center;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  line-height: 24px;
+  height: 45px;
+  align-items: center;
+  color: #fff;
+}
+
+.sidebar li a:visited {
+  text-decoration: none;
+  line-height: 24px;
+  color: #e2e6f0;
+}
+
+.sidebar a:hover{
+  background: #282c33;
+  text-shadow:0px 0px 10px rgba(22, 199, 255, 0.5);
+}
+
+.icons-sidebar {
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 4px;
+  border: 2px solid #464a52;
+  background: #464a52;
+}
+
+.child-list-item {
+  background: #3a3f48;
+}
+
+.child-title-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.child-title-text::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  -moz-border-radius: 7.5px;
+  -webkit-border-radius: 7.5px;
+  border-radius: 7.5px;
+  background-color: #464a52;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.sidebar li ul {
+  padding-left: 0px;
+}
+
+.container-next-icon {
+  width: 100%;
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.dropdown-sidebar {
+  cursor: pointer;
+}
+
+/*--------------- User ------------*/
+.user-container {
+  border-top: 1px solid #3a3f48;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.user-pic img {
+  width: 50px;
+  height: 50px;
+  padding: 2px;
+  border-radius: 12px;
+  margin-right: 15px;
+}
+
+.user-info {
+  font-size: 12px;
+  color: #818896;
+}
+
+.user-status mat-icon {
+  color: #5cb85c;
+}
+
+.user-status span {
+  line-height: 26px;
+}

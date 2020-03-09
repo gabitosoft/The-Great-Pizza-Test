@@ -1,0 +1,63 @@
+{
+  "APPLICATION": {
+    "TITLE": "MAFUME",
+    "HELP": "Help",
+    "USER": {
+      "PROFILE": "Profile",
+      "SETTINGS": "Settings",
+      "LOGOUT": "Logout",
+      "LANGUAGE": {
+        "ENGLISH": "English",
+        "SPANISH": "Spanish"
+      }
+    },
+    "CLIENT": {
+      "_NAME": "First Name",
+      "_LASTNAME": "Last Name",
+      "_ID": "Id",
+      "_CLIENTCODE": "Client Code",
+      "_ENTERPRISEID": "Enterprise",
+      "_CLIENTTYPE": "Type",
+      "_CLIENTDOCUMENT": "Document",
+      "_CLIENTADDRESS": "Address",
+      "_CLIENTOCUPATION": "Ocupation",
+      "_CLIENTPHONE": "Phone number"
+    },
+    "SEARCH": {
+      "TITLE": "Search Panel",
+      "BUTTON": "Search",
+      "DEVICE_SEARCH": "Device Search",
+      "START_DATE": "Start Date",
+      "END_DATE": "End Date",
+      "START_TIME": "Start Time",
+      "END_TIME": "End Time",
+      "TABS": {
+        "TODAY": "Today",
+        "CUSTOM": "Custom"
+      }
+    },
+    "SETTINGS": {
+      "TITLE": "Settings",
+      "TRACKING": "Tracking",
+      "TIME_IN_SECONDS": "Time in seconds",
+      "INTERVAL_TRACKING": "Interval Tracking",
+      "ACCURACY_TRACKING": "Precision Tracking",
+      "ACCURACY_IN_METERS": "Accuracy in meters",
+      "GOOGLE_MAPS_KEY": "Google Maps Key",
+      "THEME_SELECTION": "Select a theme",
+      "LOOK_AND_FEEL": "Look and Feel",
+      "APPLY_BUTTON": "Apply"
+    },
+    "LOGOUT": {
+      "TITLE": "Logout",
+      "QUESTION": "Do you really want to leave the application?",
+      "OK": "Yes",
+      "CANCEL": "Cancel"
+    },
+    "PROFORMA": {
+      "ADD_WORK": "Add Work",
+      "ADD_SECTION": "Add Section",
+      "SECTION_WORKS": "Section Works"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.table-container::parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 470px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: auto;
+  height: 100%;
+}
+
+::ng-deep .table-header {
+  /* background: #5cb85c; */
+  background: #2196f3;
+}
+
+.table-header th {
+  color: #fff;
+}
+
+table {
+  width: 100%;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+.mat-table-sticky {
+  border-top: 1px solid #e0e0e0;
+}

@@ -1,0 +1,63 @@
+{
+  "APPLICATION": {
+    "TITLE": "MAFUME",
+    "HELP": "Ayuda",
+    "USER": {
+      "PROFILE": "Perfil",
+      "SETTINGS": "Configuracion",
+      "LOGOUT": "Salir",
+      "LANGUAGE": {
+        "ENGLISH": "Ingles",
+        "SPANISH": "Español"
+      }
+    },
+    "CLIENT": {
+      "_NAME": "Nombres",
+      "_LASTNAME": "Apellidos",
+      "_ID": "Id",
+      "_CLIENTCODE": "Codigo Cliente",
+      "_ENTERPRISEID": "Empresa",
+      "_CLIENTTYPE": "Tipo de Cliente",
+      "_CLIENTDOCUMENT": "Documento",
+      "_CLIENTADDRESS": "Direccion",
+      "_CLIENTOCUPATION": "Cargo",
+      "_CLIENTPHONE": "Telefono fijo / Celular"
+    },
+    "SEARCH": {
+      "TITLE": "Panel de Busqueda",
+      "BUTTON": "Search",
+      "DEVICE_SEARCH": "Buscar Dispositivo",
+      "START_DATE": "Fecha Inicio",
+      "END_DATE": "Fecha Final",
+      "START_TIME": "Tiempo Inicio",
+      "END_TIME": "Tiempo Final",
+      "TABS": {
+        "TODAY": "Hoy",
+        "CUSTOM": "Personalizada"
+      }
+    },
+    "SETTINGS": {
+      "TITLE": "Configuraciones",
+      "TRACKING": "Seguimiento",
+      "TIME_IN_SECONDS": "Tiempo en segundos",
+      "INTERVAL_TRACKING": "Intervalo de actualizacion",
+      "ACCURACY_TRACKING": "Presicion del seguimiento",
+      "ACCURACY_IN_METERS": "Presicion en metros",
+      "GOOGLE_MAPS_KEY": "Google Maps Key",
+      "THEME_SELECTION": "Seleccione un tema",
+      "LOOK_AND_FEEL": "Vista Aplicacion",
+      "APPLY_BUTTON": "Aplicar"
+    },
+    "LOGOUT": {
+      "TITLE": "Salir",
+      "QUESTION": "Realmente desea salir de la aplicacion?",
+      "OK": "Si",
+      "CANCEL": "No"
+    },
+    "PROFORMA": {
+      "ADD_WORK": "Agregar Trabajo",
+      "ADD_SECTION": "Nueva Seccion",
+      "SECTION_WORKS": "Seccion Trabajos"
+    }
+  }
+}
