@@ -1,3 +1,61 @@
 <div class="pizza-new-container">
-  <h2>{{title}}</h2>
+  <h1>{{title}}</h1>
+  <form [formGroup]="pizzaForm" (ngSubmit)="submitForm(toppingForm, formDirective)" novalidate #formDirective="ngForm">
+    <!-- Name -->
+    <mat-form-field class="pizza-full-width">
+      <input matInput placeholder="Name" formControlName="name">
+      <!-- error -->
+      <mat-error *ngIf="errorHandling('name', 'required')">
+        You must provide a <strong>name</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Price -->
+    <mat-form-field class="pizza-full-width">
+      <input matInput placeholder="Price" formControlName="price" type="number">
+      <!-- error -->
+      <mat-error *ngIf="errorHandling('price', 'required')">
+        You must provide a <strong>price</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field class="pizza-full-width">
+      <input matInput placeholder="Description" formControlName="description">
+    </mat-form-field>
+
+    <!-- Add Toppings -->
+    <mat-form-field class="multiple-items">
+      <mat-chip-list #chipList>
+        <mat-chip
+          *ngFor="let toppingsArray of ToppingsArray"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="remove(toppingsArray)">
+          {{toppingsArray.name}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input
+          placeholder="Add Toppings..."
+          #toppingInput
+          [formControl]="toppingCtrl"
+          [matAutocomplete]="auto"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let topping of filteredToppings | async" [value]="topping.id">
+          {{topping.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <!-- Submit -->
+    <div class="button-wrapper">
+      <button mat-flat-button color="primary">Save</button>
+    </div>
+
+  </form>
 </div>

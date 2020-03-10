@@ -1,6 +1,9 @@
 /* jshint esversion: 6 */
+import { v4 as uuidv4 } from 'uuid';
+
 module.exports = (app, notifyCallback) => {
   const pizzaService = require('../controllers/pizza');
+  const pizzaToppingService = require('../controllers/pizza-topping');
 
   app.get('/api/pizzas', (req, res) => {
     pizzaService.getPizzas()
@@ -25,7 +28,7 @@ module.exports = (app, notifyCallback) => {
   });
 
   app.get('/api/pizzas/:id/toppings', (req, res) => {
-    pizzaService.getPizzaToppings(req.params.id)
+    pizzaToppingService.getPizzaToppings(req.params.id)
       .then( (toppings) => {
         res.json(toppings);
       })
@@ -37,9 +40,10 @@ module.exports = (app, notifyCallback) => {
 
   app.post('/api/pizzas', (req, res) => {
     const newPizza = {
-      name: req.body.pizza,
-      price: req.body.price,
-      description: req.body.description,
+      id: uuidv4(),
+      name: req.body._name,
+      price: req.body._price,
+      description: req.body._description,
     };
 
     pizzaService.createPizza(newPizza)
@@ -53,31 +57,49 @@ module.exports = (app, notifyCallback) => {
       });
   });
 
+  app.post('/api/pizzas/toppings', (req, res) => {
+    const newPizzaTopping = {
+      id_pizza_topping: uuidv4(),
+      id_pizza: req.body.id_pizza,
+      id_topping: req.body.id_topping,
+    };
+
+    pizzaToppingService.createPizzaTopping(newPizzaTopping)
+      .then( (pizzaTopping) => {
+        notifyCallback('messages', 'pizza-topping-created');
+        res.json(pizzaTopping);
+      })
+      .catch( (err) => {
+        console.log(err);
+        res.json({message: 'Error on create pizza-topping.', error: err});
+      });
+  });
+
   app.put('/api/pizzas/:id', (req, res) => {
     dataPizza = {
-      name: req.body.name,
-      price: req.body.price,
-      description: req.body.description,
+      name: req.body._name,
+      price: req.body._price,
+      description: req.body._description,
     };
 
     pizzatService.updatePizza(req.params.id, dataPizza)
         .then( (pizza) => {
           notifyCallback('messages', 'pizza-updated');
-          res.send(pizza);
+          res.json(pizza);
         })
         .catch( (err) => {
-          res.send({message: 'Error on update pizza.', error: err});
+          res.json({message: 'Error on update pizza.', error: err});
         });
   });
 
   app.delete('/api/pizzas/:id', (req, res) => {
     pizzaService.deletePizza(req.params.id)
         .then( (data) => {
-          res.send(data);
+          res.json(data);
         })
         .catch( (err) => {
           notifyCallback('messages', 'pizza-deleted');
-          res.send({message: 'Error on delete pizza.', error: err});
+          res.json({message: 'Error on delete pizza.', error: err});
         });
   });
 };

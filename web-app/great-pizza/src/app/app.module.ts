@@ -21,7 +21,6 @@ import { TableComponent } from './components/table/table.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { PizzaListComponent } from './pages/pizza/pizza-list/pizza-list.component';
 import { PizzaNewComponent } from './pages/pizza/pizza-new/pizza-new.component';
-import { PizzaToppingComponent } from './pages/pizza/pizza-topping/pizza-topping.component';
 import { ToppingListComponent } from './pages/topping/topping-list/topping-list.component';
 import { ToppingNewComponent } from './pages/topping/topping-new/topping-new.component';
 
@@ -39,7 +38,6 @@ const routes: Routes = [
   { path: 'topping/list', component: ToppingListComponent },
   { path: 'pizza/new', component: PizzaNewComponent },
   { path: 'pizza/list', component: PizzaListComponent },
-  { path: 'pizza/topping/list', component: PizzaToppingComponent },
   { path: '', redirectTo: 'pizza/list', pathMatch: 'full' }
 ];
 
@@ -53,7 +51,6 @@ const routes: Routes = [
     TableComponent,
     PizzaListComponent,
     PizzaNewComponent,
-    PizzaToppingComponent,
     ToppingListComponent,
     ToppingNewComponent,
   ],

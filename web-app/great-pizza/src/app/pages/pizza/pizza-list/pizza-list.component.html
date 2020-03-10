@@ -3,6 +3,10 @@
   <button mat-raised-button color="primary" matTooltip="Insert new pizza" [matTooltipPosition]="'above'" [routerLink]="['/pizza/new']">
     <mat-icon>add</mat-icon>Add
   </button>
+  &nbsp;
+  <button mat-raised-button color="warn" matTooltip="Delete Pizza" [matTooltipPosition]="'above'" (click)="deletePizza()">
+    <mat-icon>delete</mat-icon>Delete
+  </button>
   <ngx-datatable class="material"
     [rows]="rows"
     [columns]="columns"
@@ -14,7 +18,7 @@
     [selectionType]="'checkbox'"
     (select)='onSelect($event)'>
     <ngx-datatable-column
-      [width]="30"
+      [width]="'auto'"
       [sortable]="false"
       [canAutoResize]="false"
       [draggable]="false"
@@ -22,9 +26,34 @@
       [headerCheckboxable]="true"
       [checkboxable]="true">
     </ngx-datatable-column>
-    <ngx-datatable-column name="Id" prop="id_pizza"></ngx-datatable-column>
-    <ngx-datatable-column name="Name" prop="name_pizza"></ngx-datatable-column>
-    <ngx-datatable-column name="Price" prop="price_pizza"></ngx-datatable-column>
-    <ngx-datatable-column name="Description" prop="description_pizza"></ngx-datatable-column>
+    <ngx-datatable-column name="Id" prop="id" width="350"></ngx-datatable-column>
+    <ngx-datatable-column name="Name" prop="name"></ngx-datatable-column>
+    <ngx-datatable-column name="Price" prop="price"></ngx-datatable-column>
+    <ngx-datatable-column name="Description" prop="description"></ngx-datatable-column>
+    <ngx-datatable-column name="Action" prop="id">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <button mat-button color="primary" matTooltip="Show Pizza" [matTooltipPosition]="'above'" (click)="openPizza(value)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </ng-template>
+    </ngx-datatable-column>
   </ngx-datatable>
+  <div *ngIf="isVisibleToppingPanel" class="topping-panel">
+    <mat-divider></mat-divider>
+    <div class="subheader-topping-view">
+      <h3 class="subheader-topping-view">Toppings</h3>
+      <button mat-button color="primary" matTooltip="Close Topping Panel" [matTooltipPosition]="'above'" (click)="closeToppingPanel()">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </div>
+    <mat-list>
+      <mat-list-item *ngFor="let topping of toppingsSelected">
+        <mat-icon mat-list-icon>group_work</mat-icon>
+        <h4 mat-line><span class="text-topping-name">{{topping.name}}</span></h4>
+        <p mat-line> <span class="text-topping-price">{{topping.price}}</span> <mat-icon mat-list-icon>attach_money</mat-icon></p>
+        <p mat-line> {{topping.description}}</p>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
 </div>

@@ -1,16 +1,17 @@
 export class Topping {
 
   constructor(name: string, price: number, description: string) {
+    this._id = '';
     this._name = name;
     this._price = price;
     this._description = description;
   }
 
   private _id : string;
-  public get_id() : string {
+  public get id() : string {
     return this._id;
   }
-  public set_id(v : string) {
+  public set id(v : string) {
     this._id = v;
   }
 

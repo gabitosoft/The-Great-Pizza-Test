@@ -1,3 +1,33 @@
 <div class="topping-new-container">
-  <h2>{{title}}</h2>
+  <h1>{{title}}</h1>
+  <form [formGroup]="toppingForm" (ngSubmit)="submitForm(toppingForm, formDirective)" novalidate #formDirective="ngForm" >
+    <!-- Name -->
+    <mat-form-field class="topping-full-width">
+      <input matInput placeholder="Name" formControlName="name">
+      <!-- error -->
+      <mat-error *ngIf="errorHandling('name', 'required')">
+        You must provide a <strong>name</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Price -->
+    <mat-form-field class="topping-full-width">
+      <input matInput placeholder="Price" formControlName="price" type="number">
+      <!-- error -->
+      <mat-error *ngIf="errorHandling('price', 'required')">
+        You must provide a <strong>price</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field class="topping-full-width">
+      <input matInput placeholder="Description" formControlName="description">
+    </mat-form-field>
+
+    <!-- Submit -->
+    <div class="button-wrapper">
+      <button mat-flat-button color="primary">Save</button>
+    </div>
+
+  </form>
 </div>

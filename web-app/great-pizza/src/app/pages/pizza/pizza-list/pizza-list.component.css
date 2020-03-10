@@ -5,3 +5,19 @@
 .pizza-list button {
   margin-bottom: 20px;
 }
+
+.topping-panel {
+  margin-top: 30px;
+}
+
+.subheader-topping-view {
+  display: inline-block;
+}
+
+.text-topping-price {
+  font-size: 30px;
+}
+.text-topping-name {
+  text-transform: uppercase;
+  font-weight: bolder;
+}

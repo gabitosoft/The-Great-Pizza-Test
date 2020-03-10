@@ -9,10 +9,6 @@
       "title": "New Pizza",
       "path": "pizza/new",
       "component": "PizzaNewComponent"
-    }, {
-      "title": "Pizza Toppings",
-      "path": "pizza/toppings",
-      "component": "PizzaToppingComponent"
     }]
 }, {
   "title": "Toppings",

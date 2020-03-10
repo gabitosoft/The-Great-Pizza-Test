@@ -42,10 +42,6 @@ export class TableComponent<T> implements OnInit {
     this.displayedColumns.push('actions');
   }
 
-  editItem() {
-    //
-  }
-
   removeItem() {
     //
   }

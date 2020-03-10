@@ -3,8 +3,8 @@ const pizzaTopping = require('../data-layer/models/pizza-topping');
 
 module.exports = {
 
-  getPizzaToppings: () => {
-    return pizzaTopping.findAll();
+  getPizzaToppings: (id) => {
+    return pizzaTopping.findAll({ where: { id_pizza: id } });
   },
 
   getPizzaTopping: (id) => {

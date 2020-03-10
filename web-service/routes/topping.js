@@ -1,4 +1,6 @@
 /* jshint esversion: 6 */
+import { v4 as uuidv4 } from 'uuid';
+
 module.exports = (app, notifyCallback) => {
   const toppingService = require('../controllers/topping');
 
@@ -26,9 +28,10 @@ module.exports = (app, notifyCallback) => {
 
   app.post('/api/toppings', (req, res) => {
     const newTopping = {
-      name: req.body.name,
-      price: req.body.price,
-      description: req.body.description,
+      id: uuidv4(),
+      name: req.body._name,
+      price: req.body._price,
+      description: req.body._description,
     };
 
     toppingService.createTopping(newTopping)
@@ -42,7 +45,7 @@ module.exports = (app, notifyCallback) => {
       });
   });
 
-  app.put('/api/topping/:id', (req, res) => {
+  app.put('/api/toppings/:id', (req, res) => {
     dataTopping = {
       name: req.body.name,
       price: req.body.price,
@@ -59,14 +62,14 @@ module.exports = (app, notifyCallback) => {
         });
   });
 
-  app.delete('/api/topping/:id', (req, res) => {
+  app.delete('/api/toppings/:id', (req, res) => {
     toppingService.deleteTopping(req.params.id)
         .then( (data) => {
-          res.send(data);
+          res.json(data);
         })
         .catch( (err) => {
           notifyCallback('messages', 'topping-deleted');
-          res.send({message: 'Error on delete topping.', error: err});
+          res.json({message: 'Error on delete topping.', error: err});
         });
   });
 };

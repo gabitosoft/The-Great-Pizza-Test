@@ -8,17 +8,21 @@ const sequelize = db;
 
 class PizzaTopping extends Model {}
 PizzaTopping.init({
-  id: {
+  id_pizza_topping: {
     type: Sequelize.STRING,
     primaryKey: true,
     field: 'id_pizza_topping'
   },
-  amount: {
+  id_pizza: {
     type: Sequelize.STRING,
-    field: 'id_pizza',
-    references: 'pizza',
-    referencesKey: 'id_pizza'
-  }
+    allowNull: false,
+    field: 'id_pizza'
+  },
+  id_topping: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    field: 'id_topping'
+  },
 }, { sequelize, tableName: 'pizza_topping', timestamps: false });
 
 // make this available to our users in our Node applications
